@@ -99,6 +99,8 @@ class Dynamic(object):
 
     @staticmethod
     def link(url, link_type=LinkType.LINK, name=None):
+        if name is None:
+            name = url
         plugin_manager.hook.add_link(url=url, link_type=link_type, name=name)
 
     @staticmethod
